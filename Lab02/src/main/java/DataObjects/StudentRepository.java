@@ -25,8 +25,6 @@ public class StudentRepository implements IStudentRepository {
 
     @Override
     public boolean update(Student s) {
-        // Vì Student là object tham chiếu, nếu service đã set lại field thì coi như update xong
-        // Ở đây vẫn kiểm tra tồn tại để trả về true/false
         return findById(s.getId()) != null;
     }
 
@@ -52,3 +50,4 @@ public class StudentRepository implements IStudentRepository {
         return findById(id) != null;
     }
 }
+
